@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fitness Tracker Pro 💪
 
 This is a simple fitness tracker web application that I built using Python and Flask.  
@@ -35,3 +36,6 @@ It helped me learn about routing, database handling, and frontend integration.
 ## Developer
 
 Sujal Jadhav 
+=======
+# fitness-tracker-pro
+>>>>>>> 81d9acf20398b3a0a9802f9bc714e89d3f8cb18c
