@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat</title>
+<style>
+body {
+    background: #0f172a;
+    font-family: Arial;
+    color: white;
+}
+
+/* Chat container */
+.chat-box {
+    width: 400px;
+    margin: 50px auto;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    height: 500px;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* User message */
+.user {
+    background: #2563eb;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: right;
+    max-width: 70%;
+    margin-left: auto;
+}
+
+/* Bot message */
+.bot {
+    background: #334155;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: left;
+    max-width: 70%;
+    margin-right: auto;
+}
+
+/* Input area */
+form {
+    display: flex;
+    margin-top: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+/* Scrollbar (optional sexy look) */
+.chat-box::-webkit-scrollbar {
+    width: 5px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #22c55e;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>🤖 Fitness AI Chat</h2>
+
+<div class="chat-box">
+
+    {% for chat in chats %}
+        <div class="user">{{ chat.user }}</div>
+        <div class="bot">{{ chat.bot }}</div>
+    {% endfor %}
+
+    <form method="POST">
+        <input type="text" name="message" placeholder="Ask something..." required>
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+<script>
+    var chatBox = document.querySelector(".chat-box");
+    chatBox.scrollTop = chatBox.scrollHeight;
+</script>
+
+<a href="/clear_chat">Clear Chat</a>
+
+<br>
+<a href="/dashboard">⬅ Back</a>
+
+</body>
+</html>

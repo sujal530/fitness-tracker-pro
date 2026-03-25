@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Glass card */
+form, .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    margin-top: 80px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Headings */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #facc15;
+}
+
+/* Inputs */
+input, select {
+    width: 200px;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* Links */
+a {
+    display: block;
+    margin: 10px;
+    color: #38bdf8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0ea5e9;
+}
+
+/* Table */
+table {
+    margin: auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 80%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #22c55e;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Hover effect */
+tr:hover {
+    background: rgba(255,255,255,0.1);
+}

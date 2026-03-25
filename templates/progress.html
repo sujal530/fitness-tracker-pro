@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Your Progress 📊</h2>
+
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Steps</th>
+        <th>Calories</th>
+        <th>Water</th>
+        <th>Action</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>
+            <a href="/delete/{{ row[0] }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph</title>
+
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>📊 Your Fitness Graph</h2>
+
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+    const labels = {{ dates | safe }};
+    const stepsData = {{ steps | safe }};
+    const caloriesData = {{ calories | safe }};
+
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: "Steps ",
+                data: stepsData,
+                borderWidth: 3,
+                tension: 0.4,
+                yAxisID: 'y'
+            },
+            {
+                label: "Calories ",
+                data: caloriesData,
+                borderWidth: 3,
+                tension: 0.4,
+                yAxisID: 'y1'
+            }
+        ]
+    };
+
+    new Chart(document.getElementById("myChart"), {
+        type: "line",
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "white"
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "white"
+                    }
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left',
+                    ticks: {
+                        color: "white"
+                    }
+                },
+                y1: {
+                    type: 'linear',
+                    position: 'right',
+                    ticks: {
+                        color: "white"
+                    },
+                    grid: {
+                        drawOnChartArea: false
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<a href="/dashboard">Back</a>
+
+</body>
+</html>

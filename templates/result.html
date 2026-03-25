@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Your Smart Results </h2>
+
+<p>Protein: {{ protein }} g</p>
+<p>Calories: {{ calories }}</p>
+<p>Water: {{ water }} L</p>
+
+<h3>Recommended Foods </h3>
+
+<ul>
+    {% for food in foods %}
+        <li>{{ food }}</li>
+    {% endfor %}
+</ul>
+
+
+<a href="/dashboard">Back</a>
+
+</body>
+</html>
